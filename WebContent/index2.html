@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Markers</title>
+
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDEztz3vJ08I3FVl9CwPQ82uDWDd8mE9k8"></script>
+
+<script type="text/javascript">
+
+window.onload = function()
+
+{
+
+var mapOptions = {
+
+center: new google.maps.LatLng(38.897733, -77.036531),
+
+zoom:10,
+
+mapTypeId: google.maps.MapTypeId.HYBRID
+
+};
+
+var map = new google.maps.Map(document.getElementById("interactivemap"), mapOptions);
+
+var marker = new google.maps.Marker({
+
+position: new google.maps.LatLng(38.88, -77.02),
+
+map: map,
+
+title: "My first marker"
+
+});
+
+var info = new google.maps.InfoWindow({
+
+content: "My information window!!!"
+
+});
+
+google.maps.event.addListener(marker, "click", function(){
+
+info.open(map, marker);
+
+})
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div id="interactivemap" style="height:500px;width:600px"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Store Locator</title>
+
+
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="eq.js"></script>
+<script type="text/javascript">
+
+window.onload = function()
+
+{
+
+var mapOptions = {
+
+center: new google.maps.LatLng(38.897733, -77.036531),
+
+zoom:18,
+
+mapTypeId: google.maps.MapTypeId.HYBRID
+
+};
+
+var map = new google.maps.Map(document.getElementById("mapArea"), mapOptions);
+
+}
+
+</script>
+
+
+<style>
+fieldset{
+width:250px;
+display: inline;
+}
+</style>
+
+</head>
+
+<body>
+
+<fieldset>
+
+<legend><b>Year of the Earthquake</b></legend>
+
+Year:
+
+<select id="year" name="year" onchange="getYearEQData();">
+
+<option value="nothing">Select</option>
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+</select>
+
+</fieldset> 
+
+<div id="mapArea" style="width:500px;height:500px"></div>
+
+</body>
+
+</html>
